@@ -3,7 +3,7 @@
 #define SIZE 4
 
 int sum(int ar[],int n);
-
+void add_to(const int ar[],int n,int val);
 void main(void)
 {
 
@@ -12,12 +12,20 @@ void main(void)
 	long an;
 	printf("size :%d\n",sizeof(num));
 	an = sum(num,SIZE);
-	printf("%lu",an);
+	printf("%lu\n",an);
 
+
+	printf("-----------------------\n");
+
+	add_to(num,SIZE,3);
+	for(int i=0;i<SIZE;i++)
+	{
+	printf("i   %d\n",num[i]);
+	}
 }
 
 
-int sum(int ar[],int n)
+int sum( int ar[],int n)
 {
 
 	int total=0;
@@ -27,5 +35,17 @@ int sum(int ar[],int n)
 	}
 	return total;
 
+
+}
+
+
+void add_to(const int ar[],int n ,int val)
+
+{
+	int i;
+	for(i = 0;i<n;i++)
+	{
+		ar[i] +=val;
+	}
 
 }
